@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
+    "remote": "slidev --remote",
     "dev": "slidev --open",
     "export": "slidev export"
   },

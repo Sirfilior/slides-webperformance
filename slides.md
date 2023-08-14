@@ -1,23 +1,19 @@
 ---
-theme: seriph
+theme: default
 background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
 lineNumbers: false
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: Web Performance
+hideInToc: true
 ---
 
-# Welcome to Slidev
+# Web Performance
 
-Presentation slides for developers
+Performance messen und verbessern
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -26,49 +22,43 @@ Presentation slides for developers
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
+Dominik Albrecht | 15.08.2023
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Slide note
+https://googlechrome.github.io/lighthouse/scorecalc/
+https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
 -->
 
 ---
 transition: fade-out
+hideInToc: true
 ---
 
-# What is Slidev?
+# Why performance matters 
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+
+- 👩‍💼 **Usability** - Jegliches Warten auf einer Seite verschlechtert den Gesamteindruck
+- 🚪 **Bounce** - Initial lange Wartezeiten fuehren zu einem Absprung
+- 💰 **Conversion** Gerade bei WebShops zeigt sich, dass eine schlechte Performance auch die Konversationsrate negativ beeinflusst
+- 🏆 **Image** - Kunden der Intesim erwarten unter Qualitaet auch eine gut performende Applikation
+- 🤖 **SEO** - Schlechte Page-Metrics tragen zu einem verschlechtert Ranking bei Suchmaschine bei
+- 📱 **Mobile** - Auch heute sind teils mobile Netze beschraenkt. Speed kann limitiert sein, oder teils kostet sogar der Datentransfer
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
+Web Performance ist ein wichtiger Bestandteil einer qualitativ hochvertigen Loesung.
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
+Notes
 -->
 
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-image: linear-gradient(45deg, #007ecc 10%, #146b8c 20%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -83,82 +73,107 @@ Here is another comment.
 
 ---
 layout: default
+hideInToc: true
 ---
 
-# Table of contents
+# Ueberblick
 
-```
-<Toc minDepth="1" maxDepth="5"></Toc>
-```
+<ul>
+<li>sfsfs</li>
+<li>sfsfs</li>
+<li>sfsfs</li>
+<li>sfsfs</li>
+<li class="dev">sfsfs</li>
+<li class="dev">sfsfs</li>
+<li class="dev">sfsfs</li>
+<li class="dev">sfsfs</li>
+</ul>
 
-<Toc></Toc>
+<div class="abs-br m-6 flex gap-2 dev">
+Relevant primaer Entwickler
+</div>
+
+<style>
+.dev {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #007ecc 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+
+# StatusQuo
+
+Optimale Ergebnisse sind mit unserer aktuellen Arbeitsweise schwierig zu erzielen.
+
+![Local Image](/bad.png)
+
+Ursachen davon sind:
+- 🚪 **Bilder** - Initial lange Wartezeiten fuehren zu einem Absprung
+- 🚪 **JS Bundles** - Initial lange Wartezeiten fuehren zu einem Absprung
+- 🚪 **Server** - Initial lange Wartezeiten fuehren zu einem Absprung
+
+---
+
+# Projektvorgehen
+
+Pro Projekt muss ein klares Ziel hinsichtlich Performance festgelegt werden. Dabei sind vorallem die Anwendungdzwecke ausschlaggebend.
+
+![Local Image](/overview.png)
+
 
 ---
 transition: slide-up
-
-level: 2
+layout: cover
 ---
 
-# Navigation
+# Metrics: Overview
+
+![Local Image](/metrics.png)
+
+---
+transition: slide-up
+---
+
+# Metrics: Key-Metrics
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
 
-### Keyboard Shortcuts
+### Lighthouse Key-Metrics
 
 |     |     |
 | --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+| LCP| Generelle Ladezeit. Hauptinhalt fertig geladen |
+| FID| Zeit bis ein Event auf einem InputElement abgeschlossen ist |
+| CLS| Stabilitaet des Seitenaufbaus |
+| FCP| Erste Elemente werden auf der Website dargestellt  |
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+---
+layout: iframe
+
+# the web page source
+url: https://googlechrome.github.io/lighthouse/scorecalc/
+---
+
+# Tools - Scoring
 
 ---
 layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+image: /ulh-side.png
 ---
 
-# Code
+# Tools - Unlighthouse
 
-Use code snippets and get the highlighting directly![^1]
+Unlighthouse zum kompletten Website Scan
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
+```bash
+npx unlighthouse --site https://mpk.ch
 ```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 ---
 
@@ -428,6 +443,15 @@ layout: center
 class: text-center
 ---
 
+# Interne Links
+
+[Testprozess](https://web.dev/metrics/) · [Blogartikel](https://unlighthouse.dev/) 
+
+---
+layout: fact
+class: text-center
+---
+
 # Learn More
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+[Metrics by Google](https://web.dev/metrics/) · [LighthouseScore](https://googlechrome.github.io/lighthouse/scorecalc/) · [UnLighthouse](https://unlighthouse.dev/) · [WebVitals Ext](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)
