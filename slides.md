@@ -182,13 +182,16 @@ layout: cover
 
 # Metrics: Overview
 
-![Local Image](/metrics.png)
+<div grid="~ cols-2 gap-2" m="-t-2">
 
-<style>
-img {
-  filter: brightness(1.5);
-}
-</style>
+<img src="/mdes.png" class="h-55 rounded shadow" />
+<img src="/realb.png" class="h-55 rounded shadow" />
+
+</div>
+
+<div v-click style="bottom: 310px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
+<div v-click style="bottom: 110px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
+<div v-click style="bottom: 310px;left: 49%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
 
 ---
 transition: slide-up
@@ -387,7 +390,16 @@ Performance und Exp. Recorder&PerfInsights
 `CI` Integration bei zwingend wichtigen Seiten. Kann auch direkt bei der Entwicklung als "TDD" dienen
 
 ---
-layout: center
+layout: statement
+---
+
+# Fragen
+
+Koennen gerne auch im Nachhinein gestellt werden. Oder auch spezifisch auf Projektbasis
+
+
+---
+layout: statement
 class: text-center
 ---
 
