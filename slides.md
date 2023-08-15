@@ -32,6 +32,15 @@ https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?ut
 -->
 
 ---
+layout: intro
+---
+
+# Ziel
+
+Der PageSpeed ist etwas transparenter und besserer Ueberblick der Tools 
+
+
+---
 layout: default
 hideInToc: true
 ---
