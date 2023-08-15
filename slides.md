@@ -209,7 +209,7 @@ Benutzer sieht erste Rueckmeldung vom Server
 
 <img src="/fcp.svg" class="h-40 rounded shadow" />
 
-Main dirvers
+Main drivers
 - **Render Blocking Resources** - Rendering kann erst nach diesen geladenen Res gestartet werden
 - **Server Response** - Schnelle Server Response wichtig fuer FCP bei SSR
 - **Keine Preloads** - Fetches werden direkt gestartet. Gewinn = Execution Time VOR fetch
@@ -256,27 +256,42 @@ transition: slide-up
 
 # Total Blocking Time (TBT)
 
-Unterschied von Seite visuall ready zu bedienbar
+Erweitere Messung der Bedienbarkeit
 
 <div style="background: white;">
 <img src="/tbt.svg" class="h-60 rounded shadow" />
 </div>
 
 - Tasks > 50ms sind "blocking". User Inputs werden delayed
-- TTI Unterschied 
+- TTI misst Zeit bis 5 Sekunden ohne Tasks > 50ms. TBT dient zur Qualifizierung dieser Tasks. `3 Tasks waehrend 10s = 1 10s Task`
+- Die total Blockierte Zeit (TBT) ist allerdings bei Nr1 viel besser, und damit auch die Experience
 
 ---
 transition: slide-up
+preload: false
 ---
 
 # Cumulative Layout Shift (CLS)
 
-Was ist LCP
+Seite bleibt Visuall "stabil" / unveraendert
 
-![Local Image](/bad.png)
+<img src="/cls.svg" class="h-40 rounded shadow" />
 
-Main dirvers
-- **Bilder** - Bilder, geraude aus einem CMS, sind oft nicht optimiert.
+Main drivers
+- **Width/Height** - Bilder ohne `widht/height` oder `aspect-ratio`
+- **Dynamische Elemente** - Popups etc.
+
+
+---
+transition: slide-up
+preload: false
+---
+
+# Cumulative Layout Shift (CLS)
+
+<video width="520" controls>
+  <source src="/clsv.webm" type="video/webm">
+</video>
 
 
 ---
@@ -331,6 +346,10 @@ vitals.js:234 [Web Vitals Extension] TTFB 178 ms (good)
 vitals.js:234 [Web Vitals Extension] CLS 0.00 (good)
 ```
 
+[SBB](https://sbb.ch)
+
+[BVK](https://bvk.ch)
+
 ---
 
 # Tools -  PerformanceTools
@@ -340,99 +359,23 @@ Performance und Exp. Recorder&PerfInsights
 ![Local Image](/devtools.png)
 
 ---
-class: px-20
----
 
-# Themes
+# Optimierungsprozess
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+1. Genereller Speed Test mit Google Page Speed und UnLighthouse. **Wichtig Real Time Metrics**
 
-<div grid="~ cols-2 gap-2" m="-t-2">
+2. Debug/Pin-Point mit anderen Tools und Debugger. Approach ist "QuickWins" zuerst
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
+3. Lokale Anpassungen koennen direkt mit Lighthouse getestet werden.
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+4. Erneuter Test auf Produktion.
 
-</div>
+<br>
+<br>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+(optional)
 
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+`CI` Integration bei zwingend wichtigen Seiten. Kann auch direkt bei der Entwicklung als "TDD" dienen
 
 ---
 layout: center
@@ -441,7 +384,7 @@ class: text-center
 
 # Interne Links
 
-[Testprozess](https://web.dev/metrics/) · [Blogartikel](https://unlighthouse.dev/) 
+[Testprozess](https://intersim.atlassian.net/wiki/spaces/IS/pages/929764047/K5+Test-Prozess) · [Wiki Seite](https://intersim.atlassian.net/wiki/spaces/FE/pages/851542215/Page-Speed+Optimieren) · [Blogartikel](https://www.intersim.ch/blog/artikel/362/google-page-speed-eine-ubersicht) 
 
 ---
 layout: fact
