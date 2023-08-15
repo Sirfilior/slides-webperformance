@@ -32,6 +32,40 @@ https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?ut
 -->
 
 ---
+layout: default
+hideInToc: true
+---
+
+# Ueberblick
+
+<ul>
+<li>Why</li>
+<li>StatusQuo</li>
+<li>Projektstart</li>
+<li>Laufende Projekte</li>
+<li class="dev">Metrics</li>
+<li class="dev">Tools</li>
+<li class="dev">Fragen/Antworten</li>
+<li class="dev">Abschluss</li>
+</ul>
+
+<div class="abs-br m-6 flex gap-2 dev">
+Relevant primaer Entwickler
+</div>
+
+<style>
+.dev {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #007ecc 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
 transition: fade-out
 hideInToc: true
 ---
@@ -43,7 +77,7 @@ hideInToc: true
 - 👩‍💼 **Usability** - Jegliches Warten auf einer Seite verschlechtert den Gesamteindruck
 - 🚪 **Bounce** - Initial lange Wartezeiten fuehren zu einem Absprung
 - 💰 **Conversion** Gerade bei WebShops zeigt sich, dass eine schlechte Performance auch die Konversationsrate negativ beeinflusst
-- 🏆 **Image** - Kunden der Intesim erwarten unter Qualitaet auch eine gut performende Applikation
+- 🏆 **Image** - Kunden der Intesim verstehen unter Qualitaet auch eine gut performende Applikation
 - 🤖 **SEO** - Schlechte Page-Metrics tragen zu einem verschlechtert Ranking bei Suchmaschine bei
 - 📱 **Mobile** - Auch heute sind teils mobile Netze beschraenkt. Speed kann limitiert sein, oder teils kostet sogar der Datentransfer
 
@@ -68,42 +102,9 @@ h1 {
 </style>
 
 <!--
-Here is another comment.
+here is another comment.
 -->
 
----
-layout: default
-hideInToc: true
----
-
-# Ueberblick
-
-<ul>
-<li>sfsfs</li>
-<li>sfsfs</li>
-<li>sfsfs</li>
-<li>sfsfs</li>
-<li class="dev">sfsfs</li>
-<li class="dev">sfsfs</li>
-<li class="dev">sfsfs</li>
-<li class="dev">sfsfs</li>
-</ul>
-
-<div class="abs-br m-6 flex gap-2 dev">
-Relevant primaer Entwickler
-</div>
-
-<style>
-.dev {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #007ecc 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
 
 ---
 
@@ -113,19 +114,57 @@ Optimale Ergebnisse sind mit unserer aktuellen Arbeitsweise schwierig zu erziele
 
 ![Local Image](/bad.png)
 
-Ursachen davon sind:
-- 🚪 **Bilder** - Initial lange Wartezeiten fuehren zu einem Absprung
-- 🚪 **JS Bundles** - Initial lange Wartezeiten fuehren zu einem Absprung
-- 🚪 **Server** - Initial lange Wartezeiten fuehren zu einem Absprung
+Primaere Ursachen davon sind:
+- 🏞️ **Bilder** - Bilder, geraude aus einem CMS, sind oft nicht optimiert.
+- 📦 **JS Bundles** - Zu grosse und nicht optimierte JS Bundles laden lange, sind aber viel noch wichtiger ein Treiber der [T]ime[T]o[I]nteractive
+- 🧮 **Server** - Server Responses teils langsam und nicht genuegend cecached
 
 ---
 
-# Projektvorgehen
+# Projektstart
 
 Pro Projekt muss ein klares Ziel hinsichtlich Performance festgelegt werden. Dabei sind vorallem die Anwendungdzwecke ausschlaggebend.
 
 ![Local Image](/overview.png)
 
+
+<!--
+Was soll die Seite erreichen?
+Was ist unser Target?
+Wichtig immre bei der Umsetzung daran zu denken
+-->
+
+---
+
+# Laufende Projekte
+
+- Keine Garantie auf eine fixe Performance Zahl
+- Seiten sind zu unterschiedlich, und werden zu stark durch den Kunden beeinflusst 
+- Best-Effort wichtig, da wir unserem Image gerecht werden wollen
+- Optimierungen auf unserer Seite sind oft nicht mit viel Aufwand verbunden. Und koennen gut bei Weiterentwicklungen eingebracht werden..
+- Das sind zum Beispiel: <span class="hl hl1">Moderne Bildformate(webp)</span>, Bilder korrekt aus <span class="hl hl2">CMS verkleinern/optimieren</span>, Javascript Build verbessern. <span class="hl hl3">Caching</span> evaluieren
+
+<style>
+.hl {
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.hl1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #db37d3 10%, #fa00ee 20%);
+}
+.hl2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #de8116 10%, #f09c3c 20%);
+}
+.hl3 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #7f40c7 10%, #a35ef2 20%);
+}
+</style>
 
 ---
 transition: slide-up
@@ -136,22 +175,109 @@ layout: cover
 
 ![Local Image](/metrics.png)
 
+<style>
+img {
+  filter: brightness(1.5);
+}
+</style>
+
 ---
 transition: slide-up
 ---
 
 # Metrics: Key-Metrics
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+Wichtigste Page-Speed Metrics gemessen in Lighthouse
 
 ### Lighthouse Key-Metrics
 
 |     |     |
 | --- | --- |
-| LCP| Generelle Ladezeit. Hauptinhalt fertig geladen |
-| FID| Zeit bis ein Event auf einem InputElement abgeschlossen ist |
-| CLS| Stabilitaet des Seitenaufbaus |
 | FCP| Erste Elemente werden auf der Website dargestellt  |
+| LCP| Generelle Ladezeit. Hauptinhalt fertig geladen |
+| TTI| Zeit ab Ladestart bis UserInput normal verarbeitet wird.  (No long tasks / main thread clear)|
+| TBT | Totale Zeit, in welcher der main thread blockier ist |
+| CLS| Stabilitaet des Seitenaufbaus |
+
+---
+transition: slide-up
+---
+
+# First Contentful Paint (FCP)
+
+Benutzer sieht erste Rueckmeldung vom Server
+
+<img src="/fcp.svg" class="h-40 rounded shadow" />
+
+Main dirvers
+- **Render Blocking Resources** - Rendering kann erst nach diesen geladenen Res gestartet werden
+- **Server Response** - Schnelle Server Response wichtig fuer FCP bei SSR
+- **Keine Preloads** - Fetches werden direkt gestartet. Gewinn = Execution Time VOR fetch
+- **CSS Persing** - In Praxis Impact oft klein, allerdings auch einfach optimiert
+- **Static Assets** - Caching und Edge CDN extremes Potenzial.
+
+---
+transition: slide-up
+---
+
+# Largest Contentful Paint (LCP)
+
+Hauptinhalt geladen. Benutzer nimmt die Seite als "ready" war.
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+<img border="rounded" src="/lcp.svg">
+
+<img border="rounded" src="/lcprender.avif">
+
+</div>
+
+Debuggen von FCP und LCP
+- Performance Waterfall in DevTools
+
+---
+transition: slide-up
+---
+
+# Time To Interactive (TTI)
+
+Unterschied von Seite visuall ready zu bedienbar
+
+<div style="background: white;">
+<img src="/tti.svg" class="h-60 rounded shadow" />
+</div>
+
+**Wird hauptsaechlich durch JS verlangsamt!**
+
+
+---
+transition: slide-up
+---
+
+# Total Blocking Time (TBT)
+
+Unterschied von Seite visuall ready zu bedienbar
+
+<div style="background: white;">
+<img src="/tbt.svg" class="h-60 rounded shadow" />
+</div>
+
+- Tasks > 50ms sind "blocking". User Inputs werden delayed
+- TTI Unterschied 
+
+---
+transition: slide-up
+---
+
+# Cumulative Layout Shift (CLS)
+
+Was ist LCP
+
+![Local Image](/bad.png)
+
+Main dirvers
+- **Bilder** - Bilder, geraude aus einem CMS, sind oft nicht optimiert.
+
 
 ---
 layout: iframe
@@ -164,6 +290,21 @@ url: https://googlechrome.github.io/lighthouse/scorecalc/
 
 ---
 layout: image-right
+image: /lighthouse.jpg
+transition: slide-up
+---
+
+# Tools - Lighthouse & Pagespeed
+
+Erste Anlaufstelle fuer Messungen
+
+Lighthosue DevTools
+
+[PageSpeed](https://pagespeed.web.dev/analysis/https-www-mpk-ch/g5v09db74p?form_factor=mobile)
+
+---
+layout: image-right
+transition: slide-up
 image: /ulh-side.png
 ---
 
@@ -176,47 +317,27 @@ npx unlighthouse --site https://mpk.ch
 ```
 
 ---
+transition: slide-up
+---
 
-# Components
+# Tools - WebVitals Extension
 
-<div grid="~ cols-2 gap-4">
-<div>
+Extension praktisch fuer debugging
 
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
+```bash
+vitals.js:234 [Web Vitals Extension] LCP 327 ms (good)
+vitals.js:234 [Web Vitals Extension] FCP 327 ms (good)
+vitals.js:234 [Web Vitals Extension] TTFB 178 ms (good)
+vitals.js:234 [Web Vitals Extension] CLS 0.00 (good)
 ```
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+---
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+# Tools -  PerformanceTools
 
-</div>
-<div>
+Performance und Exp. Recorder&PerfInsights
 
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
+![Local Image](/devtools.png)
 
 ---
 class: px-20
@@ -227,18 +348,6 @@ class: px-20
 Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
 <div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
 
 <img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
 
@@ -324,119 +433,6 @@ const final = {
 [Learn More](https://sli.dev/guide/animations.html#motion)
 
 </div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
----
 
 ---
 layout: center
