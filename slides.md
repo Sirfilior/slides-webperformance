@@ -345,9 +345,11 @@ preload: false
 
 # Cumulative Layout Shift (CLS)
 
-<video width="520" controls>
+<video width="480" controls>
   <source src="/clsv.webm" type="video/webm">
 </video>
+
+https://web.dev/cls/
 
 
 ---
