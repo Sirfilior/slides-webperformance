@@ -42,6 +42,7 @@ Der PageSpeed ist etwas transparenter und besserer Ueberblick der Tools
 
 ---
 layout: default
+transition: fade-out
 hideInToc: true
 ---
 
@@ -75,7 +76,6 @@ Relevant primaer Entwickler
 </style>
 
 ---
-transition: fade-out
 hideInToc: true
 ---
 
@@ -113,6 +113,46 @@ h1 {
 <!--
 here is another comment.
 -->
+
+
+---
+
+# StatusQuo
+
+Wir fokusieren uns hier auf die klassische Server-Client Architektur wie in TYPO3 und SV4
+
+Andere Architekturen haben jeweils spezifische Pros/Cons
+
+<div grid="~ cols-3 gap-2" m="-t-2">
+
+<div>
+<h3>SPA</h3>
+<p class="text-green">Interactive</p>
+<p class="text-green">App-Feel</p>
+<p class="text-red">FCP Slow</p>
+<p class="text-red">Layoutshift</p>
+</div>
+
+<div>
+<h3>SSG</h3>
+<p class="text-green">Schnelle Responsetimes</p>
+<p class="text-green">"Instant" reactive</p>
+<p class="text-red">Stale</p>
+</div>
+
+<div>
+<h3>SSR</h3>
+<p class="text-green">Aktuelle Daten</p>
+<p class="text-green">Wenig Layoutshift</p>
+<p class="text-red">Langsamer da viele Rerenders</p>
+<p class="text-red">Optimierungen schwieriger</p>
+</div>
+
+</div>
+
+<style>
+
+</style>
 
 
 ---
@@ -189,9 +229,11 @@ layout: cover
 
 </div>
 
-<div v-click style="bottom: 310px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
-<div v-click style="bottom: 110px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
-<div v-click style="bottom: 310px;left: 49%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
+Unterschied Real-World vs Lab Metrics. LabMetrics auch wichtig fuer Scoring
+
+<div v-click style="bottom: 330px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
+<div v-click style="bottom: 140px;left: 19%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
+<div v-click style="bottom: 340px;left: 49%;" class="absolute bg-none border-2 w-30 h-10 border-red"></div>
 
 ---
 transition: slide-up
@@ -260,6 +302,8 @@ Unterschied von Seite visuall ready zu bedienbar
 </div>
 
 **Wird hauptsaechlich durch JS verlangsamt!**
+
+Im Vergleich zu FCP spielt hier die Groesse der JS Files keine Rolle, sondern die Execution-Time.
 
 
 ---
@@ -363,6 +407,16 @@ vitals.js:234 [Web Vitals Extension] CLS 0.00 (good)
 [BVK](https://bvk.ch)
 
 ---
+transition: slide-up
+---
+
+# Tools -  Network Traffic
+
+Insights from devtools network panel
+
+![Local Image](/network.png)
+
+---
 
 # Tools -  PerformanceTools
 
@@ -385,9 +439,24 @@ Performance und Exp. Recorder&PerfInsights
 <br>
 <br>
 
-(optional)
+*optional*
 
 `CI` Integration bei zwingend wichtigen Seiten. Kann auch direkt bei der Entwicklung als "TDD" dienen
+
+---
+layout: quote
+---
+
+# Rueckblick
+
+- Fuer unsere Projekte mit einem CMS ist die Bildoptimierung zentral. Image Processing verwenden
+- Durch relativ grosse Seiten bzw. viel Inhalt sind oft JS Bundles zu gross
+- Caching kann noch weiter optimiert werden.
+
+<br>
+
+- **Bei der Entwicklung sollte auch heute mit schnellem Internet und schnellen Geraeten der Speed nicht vergessen gehen**
+
 
 ---
 layout: statement
